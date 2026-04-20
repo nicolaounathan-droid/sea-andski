@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sea & Ski — Exceptional Journeys in PACA</title>
+
+<!-- ✅ Google Search Console Verification -->
+<meta name="google-site-verification" content="LkVvqaqb6myjlYAV7E3juY_GhnTZeDFCItFqx-yECaI" />
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Sea & Ski — Exceptional group travel experiences in Provence-Alpes-Côte d'Azur. From the Mediterranean coastline to the Alpine peaks. Tailor-made journeys for every group."/>
+<meta name="keywords" content="sea and ski, PACA, travel, provence, côte d'azur, Nice, Cannes, Saint-Tropez, Marseille, Avignon, Gap, Menton, Aix-en-Provence, group travel, luxury tourism"/>
+<meta name="author" content="Nathan Nicolaou — Sea and Ski"/>
+<meta property="og:title" content="Sea & Ski — Exceptional Journeys in PACA"/>
+<meta property="og:description" content="From the Mediterranean coastline to the Alpine peaks — personalised group travel in Provence-Alpes-Côte d'Azur."/>
+<meta property="og:type" content="website"/>
+<meta name="robots" content="index, follow"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+<style>
+:root {
+  --navy: #0b1d2e;
+  --ocean: #1a4a6b;
+  --sky: #4a9eca;
+  --ice: #c8e8f5;
+  --sand: #f5efe6;
+  --gold: #c9a84c;
+  --white: #ffffff;
+  --text: #1a1a2e;
+  --light: #f9f6f1;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--light); color: var(--text); overflow-x: hidden; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 4rem;
+  transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
+}
+nav.scrolled {
+  background: rgba(11,29,46,0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 30px rgba(0,0,0,0.25);
+}
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--white); letter-spacing: 0.04em; text-decoration: none; }
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  color: rgba(255,255,255,0.85); text-decoration: none;
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  transition: color 0.2s; position: relative;
+}
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s; }
+.nav-links a:hover { color: var(--white); }
+.nav-links a:hover::after { width: 100%; }
+
+/* HERO */
+#home { min-height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.hero-bg {
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(11,29,46,0.72) 30%, rgba(26,74,107,0.45) 70%, rgba(74,158,202,0.2) 100%),
+  url('https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=1600&q=85') center/cover no-repeat;
+}
+.hero-content { position: relative; z-index: 2; text-align: center; padding: 0 2rem; animation: fadeUp 1.2s ease both; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+.hero-eyebrow { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; animation: fadeUp 1.2s 0.2s ease both; }
+.hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 8vw, 7rem); font-weight: 300; color: var(--white); line-height: 1.05; animation: fadeUp 1.2s 0.35s ease both; }
+.hero-title em { font-style: italic; color: var(--ice); }
+.hero-subtitle { margin-top: 1.5rem; font-size: 1rem; color: rgba(255,255,255,0.75); font-weight: 300; max-width: 480px; margin-left: auto; margin-right: auto; animation: fadeUp 1.2s 0.5s ease both; }
+.hero-cta { display: inline-block; margin-top: 2.5rem; padding: 0.9rem 2.8rem; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; font-size: 0.76rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500; transition: background 0.3s, color 0.3s; animation: fadeUp 1.2s 0.65s ease both; }
+.hero-cta:hover { background: var(--gold); color: var(--navy); }
+.hero-scroll { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: rgba(255,255,255,0.5); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; animation: bounce 2s infinite; }
+.hero-scroll::before { content: ''; display: block; width: 1px; height: 40px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.5)); }
+@keyframes bounce { 0%,100% { transform:translateX(-50%) translateY(0); } 50% { transform:translateX(-50%) translateY(8px); } }
+
+/* SECTIONS */
+section { padding: 7rem 2rem; }
+.section-inner { max-width: 1140px; margin: 0 auto; }
+.section-label { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 300; line-height: 1.1; color: var(--navy); }
+.divider { width: 60px; height: 1px; background: var(--gold); margin: 1.5rem 0 2rem; }
+
+/* ABOUT */
+#about { background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.about-img-wrap { position: relative; }
+.about-img-wrap img { width: 100%; height: 560px; object-fit: cover; display: block; }
+.about-img-accent { position: absolute; bottom: -24px; right: -24px; width: 180px; height: 180px; border: 2px solid var(--gold); z-index: -1; }
+.about-text p { font-size: 0.97rem; line-height: 1.85; color: #444; margin-bottom: 1.2rem; }
+.about-text strong { color: var(--navy); font-weight: 500; }
+.about-badge { display: inline-flex; align-items: center; gap: 0.8rem; margin-top: 1.5rem; padding: 0.9rem 1.4rem; background: var(--light); border-left: 3px solid var(--gold); }
+.about-badge-icon { font-size: 1.4rem; }
+.about-badge-text { font-size: 0.78rem; color: var(--ocean); font-weight: 500; letter-spacing: 0.05em; }
+
+/* SERVICES */
+#services { background: var(--navy); position: relative; overflow: hidden; }
+#services::before { content: ''; position: absolute; top: -40%; right: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(74,158,202,0.12) 0%, transparent 70%); pointer-events: none; }
+#services .section-title { color: var(--white); }
+#services .section-label { color: var(--sky); }
+#services .divider { background: var(--sky); }
+.services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5px; margin-top: 4rem; }
+.service-card { background: rgba(255,255,255,0.04); padding: 2.5rem 2rem; border: 1px solid rgba(255,255,255,0.07); transition: background 0.3s, transform 0.3s; position: relative; overflow: hidden; }
+.service-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+.service-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-4px); }
+.service-card:hover::before { transform: scaleX(1); }
+.service-icon { font-size: 2.2rem; margin-bottom: 1.2rem; }
+.service-name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+.service-desc { font-size: 0.87rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+.services-main-text { max-width: 700px; font-size: 1rem; line-height: 1.85; color: rgba(255,255,255,0.7); margin-top: 1rem; }
+
+/* DESTINATIONS */
+#destinations { background: var(--light); }
+.dest-intro { max-width: 580px; margin-bottom: 4rem; }
+.dest-intro p { font-size: 0.97rem; line-height: 1.8; color: #555; margin-top: 1rem; }
+.dest-block { margin-bottom: 5rem; }
+.dest-city-header { display: flex; align-items: baseline; gap: 1.2rem; margin-bottom: 1.5rem; }
+.dest-city-name { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: var(--navy); }
+.dest-city-tag { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); padding: 0.25rem 0.7rem; border: 1px solid var(--gold); }
+
+/* SLIDESHOW */
+.slideshow { position: relative; overflow: hidden; aspect-ratio: 16/7; background: #ddd; }
+.slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.8s ease; }
+.slide.active { opacity: 1; }
+.slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.slide-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.2rem 1.8rem; background: linear-gradient(to top, rgba(11,29,46,0.75), transparent); color: rgba(255,255,255,0.85); font-size: 0.78rem; font-style: italic; }
+.slide-controls { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 1rem; pointer-events: none; }
+.slide-btn { pointer-events: all; width: 42px; height: 42px; background: rgba(11,29,46,0.55); border: 1px solid rgba(255,255,255,0.25); color: white; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; backdrop-filter: blur(4px); }
+.slide-btn:hover { background: rgba(201,168,76,0.75); }
+.slide-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 0.8rem; }
+.dot { width: 6px; height: 6px; background: #ccc; border-radius: 50%; cursor: pointer; transition: background 0.3s; }
+.dot.active { background: var(--gold); }
+.dest-city-label { text-align: center; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; letter-spacing: 0.12em; color: var(--navy); margin-top: 0.8rem; text-transform: uppercase; }
+
+/* CONTACT */
+#contact { background: var(--white); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.contact-info p { font-size: 0.97rem; line-height: 1.85; color: #555; margin-top: 1rem; max-width: 380px; }
+.contact-details { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+.contact-item { display: flex; gap: 1rem; align-items: center; }
+.contact-item-icon { font-size: 1.1rem; color: var(--gold); }
+.contact-item-text { font-size: 0.87rem; color: #555; }
+.contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: #999; }
+.form-group input, .form-group textarea { padding: 0.85rem 1rem; border: 1px solid #e0ddd7; background: var(--light); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text); outline: none; transition: border 0.2s; resize: vertical; }
+.form-group input:focus, .form-group textarea:focus { border-color: var(--gold); }
+.form-submit { padding: 1rem 2.5rem; background: var(--navy); color: var(--white); border: none; font-family: 'DM Sans', sans-serif; font-size: 0.76rem; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: background 0.3s; align-self: flex-start; }
+.form-submit:hover { background: var(--ocean); }
+
+/* FOOTER */
+footer { background: var(--navy); padding: 3rem 4rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--white); }
+.footer-logo span { color: var(--gold); }
+.footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.35); }
+.footer-links { display: flex; gap: 2rem; }
+.footer-links a { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  nav { padding: 1.2rem 1.8rem; }
+  .nav-links { gap: 1.4rem; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .services-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  footer { flex-direction: column; text-align: center; padding: 2rem; }
+}
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  .hero-title { font-size: 3rem; }
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="#home" class="nav-logo">Sea <span>&</span> Ski</a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#services">Our Services</a></li>
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO — Côte d'Azur aerial view -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Région Provence-Alpes-Côte d'Azur</p>
+    <h1 class="hero-title">Sea <em>&</em> Ski</h1>
+    <p class="hero-subtitle">Une organisation exceptionnelle pour un voyage exceptionnel — from the coastline to the mountains.</p>
+    <a href="#destinations" class="hero-cta">Explore Destinations</a>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <img src="https://wp4-c12479-1.btsndrc.ac/wp-content/uploads/2025/11/pexels-photo-27575861-27575861-1024x683.jpg" alt="Nathan Nicolaou, CEO of Sea and Ski"/>
+        <div class="about-img-accent"></div>
+      </div>
+      <div class="about-text reveal">
+        <p class="section-label">About Sea & Ski</p>
+        <h2 class="section-title">A New Vision<br/>for French Tourism</h2>
+        <div class="divider"></div>
+        <p>CEO of Sea and Ski is <strong>Nathan Nicolaou</strong>. At only 18 years old, Nathan embodies a new generation of tourism entrepreneurs — dynamic, connected and passionate. Having grown up surrounded by the tourism world, he quickly developed a deep understanding of the industry and built valuable contacts within it.</p>
+        <p>Currently pursuing studies in <strong>marketing</strong>, Nathan combines strategic vision with creativity to design travel experiences that merge <strong>authenticity, adventure and modernity</strong>.</p>
+        <p>Motivated by his passion for discovery from the sea to the mountains, he founded <strong>Sea and Ski</strong> — a company that offers unique and sustainable tourism experiences inspired by both nature and innovation.</p>
+        <p>Despite his young age, Nathan has already surrounded himself with an <strong>experienced and motivated team</strong>, sharing a common goal: to bring a fresh and modern perspective to tourism while emphasizing quality, respect for the environment, and human connection.</p>
+        <div class="about-badge">
+          <span class="about-badge-icon">🌊</span>
+          <span class="about-badge-text">Driven · Curious · Ambitious — Every journey is a story to be written</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-title">Our Services</h2>
+      <div class="divider"></div>
+      <p class="services-main-text">Sea and Ski offers <strong style="color:#fff">personalized and tailor-made</strong> programmes according to the requirements and budget of the group. Our local expertise together with your knowledge of your clients' specific needs will contribute to an unforgettable French experience.</p>
+      <p class="services-main-text" style="margin-top:1rem">Whether your group is travelling <strong style="color:#fff">for leisure or business</strong>, we will follow them on every step of their journey. Your clients can reach us 24h during their stay. We respond in Swedish, Finnish, English and French.</p>
+    </div>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-icon">🏖️</div>
+        <div class="service-name">Sea Experiences</div>
+        <div class="service-desc">Coastal getaways, boat trips, beach clubs, diving and Mediterranean adventures tailored to your group.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⛷️</div>
+        <div class="service-name">Mountain Escapes</div>
+        <div class="service-desc">Ski resorts, alpine hiking, mountain lodges — all the best of the Provençal Alps curated for you.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤝</div>
+        <div class="service-name">Group & Business</div>
+        <div class="service-desc">Team-building, incentive travel, MICE — complete 24/7 assistance and a reliable local network.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌿</div>
+        <div class="service-name">Sustainable Tourism</div>
+        <div class="service-desc">Eco-conscious experiences that respect the environment and support local communities.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">✈️</div>
+        <div class="service-name">Tailor-Made Packages</div>
+        <div class="service-desc">Every itinerary is built from scratch around your group's preferences, budget and expectations.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <div class="service-name">Partner Network</div>
+        <div class="service-desc">A constantly expanding network of reliable local suppliers to bring you new and innovative packages.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section id="destinations">
+  <div class="section-inner">
+    <div class="dest-intro reveal">
+      <p class="section-label">Région PACA</p>
+      <h2 class="section-title">Our Destinations</h2>
+      <div class="divider"></div>
+      <p>Discover the finest destinations in Provence-Alpes-Côte d'Azur — from glittering coastlines to snow-capped Alpine peaks.</p>
+    </div>
+
+    <!-- ── NICE ── -->
+    <div class="dest-block reveal">
+      <div class="dest-city-header">
+        <span class="dest-city-name">Nice</span>
+        <span class="dest-city-tag">Côte d'Azur</span>
+      </div>
+      <div class="slideshow" id="ss-nice">
+        <div class="slide active">
+          <img src="https://images.unsplash.com/photo-1491557345352-5929e343eb89?w=1400&q=85" alt="Promenade des Anglais, Nice"/>
+          <div class="slide-caption">La Promenade des Anglais — Nice's iconic seafront boulevard</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1558618047-3b4f8e8e-1?w=1400&q=85"
+               onerror="this.src='https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?w=1400&q=85'"
+               alt="Nice old town Cours Saleya"/>
+          <div class="slide-caption">Cours Saleya — the vibrant flower and food market of Vieux-Nice</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1545987796-200677ee1011?w=1400&q=85" alt="Nice bay aerial view"/>
+          <div class="slide-caption">La Baie des Anges — aerial panorama over the turquoise Mediterranean</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1574009238963-2a7ea0d3ba8d?w=1400&q=85"
+               onerror="this.src='https://images.unsplash.com/photo-1596394723269-b2cbca4e6313?w=1400&q=85'"
+               alt="Nice colourful facades"/>
+          <div class="slide-caption">Colourful Baroque facades of the historic old town</div>
+        </div>
+        <div class="slide-controls">
+          <button class="slide-btn" onclick="prevSlide('ss-nice')">&#8592;</button>
+          <button class="slide-btn" onclick="nextSlide('ss-nice')">&#8594;</button>
+        </div>
+      </div>
+      <div class="slide-dots" id="dots-nice"></div>
+      <div class="dest-city-label">Nice</div>
+    </div>
+
+    <!-- ── MENTON ── -->
+    <div class="dest-block reveal">
+      <div class="dest-city-header">
+        <span class="dest-city-name">Menton</span>
+        <span class="dest-city-tag">Riviera</span>
+      </div>
+      <div class="slideshow" id="ss-menton">
+        <div class="slide active">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1400&q=85"
+               onerror="this.src='https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1400&q=85'"
+               alt="Menton colourful harbour"/>
+          <div class="slide-caption">Menton's pastel harbour — the jewel of the French Riviera</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&q=85"
+               onerror="this.src='https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?w=1400&q=85'"
+               alt="Menton old town"/>
+          <div class="slide-caption">The Baroque old town climbing the hillside above the sea</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1596394723269-b2cbca4e6313?w=1400&q=85"
+               onerror="this.src='https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1400&q=85'"
+               alt="Menton citrus gardens"/>
+          <div class="slide-caption">Lemon gardens and citrus terraces — Menton's fragrant specialty</div>
+        </div>
+        <div class="slide-controls">
+          <button class="slide-btn" onclick="prevSlide('ss-menton')">&#8592;</button>
+          <button class="slide-btn" onclick="nextSlide('ss-menton')">&#8594;</button>
+        </div>
+      </div>
+      <div class="slide-dots" id="dots-menton"></div>
+      <div class="dest-city-label">Menton</div>
+    </div>
+
+    <!-- ── CANNES ── -->
+    <div class="dest-block reveal">
+      <div class="dest-city-header">
+        <span class="dest-city-name">Cannes</span>
+        <span class="dest-city-tag">Côte d'Azur</span>
+      </div>
+      <div class="slideshow" id="ss-cannes">
+        <div class="slide active">
+          <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1400&q=85"
+               onerror="this.src='https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1400&q=85'"
+               alt="Cannes La Croisette"/>
+          <div class="slide-caption">La Croisette — the legendary palm-lined boulevard of Cannes</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=1400&q=85" alt="Cannes Palais des Festivals"/>
+          <div class="slide-caption">Palais des Festivals — home of the world-famous Film Festival</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?w=1400&q=85" alt="Cannes harbour yachts"/>
+          <div class="slide-caption">Cannes harbour lined with superyachts and azure waters</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1400&q=85" alt="Cannes beach"/>
+          <div class="slide-caption">Golden sandy beaches of the French Riviera in full splendour</div>
+        </div>
+        <div class="slide-controls">
+          <button class="slide-btn" onclick="prevSlide('ss-cannes')">&#8592;</button>
+          <button class="slide-btn" onclick="nextSlide('ss-cannes')">&#8594;</button>
+        </div>
+      </div>
+      <div class="slide-dots" id="dots-cannes"></div>
+      <div class="dest-city-label">Cannes</div>
+    </div>
+
+    <!-- ── SAINT-TROPEZ ── -->
+    <div class="dest-block reveal">
+      <div class="dest-city-header">
+        <span class="dest-city-name">Saint-Tropez</span>
+        <span class="dest-city-tag">Var</span>
+      </div>
+      <div class="slideshow" id="ss-sainttropez">
+        <div class="slide active">
+          <img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1400&q=85" alt="Saint-Tropez port"/>
+          <div class="slide-caption">The iconic harbour of Saint-Tropez lined with colourful boats</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1519677584237-752f8853252e?w=1400&q=85" alt="Pampelonne beach"/>
+          <div class="slide-caption">Pampelonne — the most glamorous beach on the entire Riviera</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=85" alt="Saint-Tropez village"/>
+          <div class="slide-caption">The charming sun-drenched old village and its citadel</div>
+        </div>
+        <div class="slide-controls">
+          <button class="slide-btn" onclick="prevSlide('ss-sainttropez')">&#8592;</button>
+          <button class="slide-btn" onclick="nextSlide('ss-sainttropez')">&#8594;</button>
+        </div>
+      </div>
+      <div class="slide-dots" id="dots-sainttropez"></div>
+      <div class="dest-city-label">Saint-Tropez</div>
+    </div>
+
+    <!-- ── MARSEILLE ── -->
+    <div class="dest-block reveal">
+      <div class="dest-city-header">
+        <span class="dest-city-name">Marseille</span>
+        <span class="dest-city-tag">Provence</span>
+      </div>
+      <div class="slideshow" id="ss-marseille">
+        <div class="slide active">
+          <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=1400&q=85" alt="Marseille Vieux-Port"/>
+          <div class="slide-caption">Le Vieux-Port — the historic heart of Marseille since antiquity</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1600493033990-1c5b0dc5a9b1?w=1400&q=85"
+               onerror="this.src='https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=1400&q=85'"
+               alt="Calanques Marseille"/>
+          <div class="slide-caption">The breathtaking Calanques — turquoise coves on the wild coast</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1595983625808-af0e6e671fe0?w=1400&q=85"
+               onerror="this.src='https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=1400&q=85'"
+               alt="Notre-Dame de la Garde Marseille"/>
+          <div class="slide-caption">Notre-Dame de la Garde — the golden basilica watching over the city</div>
+        </div>
+        <div class="slide-controls">
+          <button class="slide-btn" onclick="prevSlide('ss-marseille')">&#8592;</button>
+          <button class="slide-btn" onclick="nextSlide('ss-marseille')">&#8594;</button>
+        </div>
+      </div>
+      <div class="slide-dots" id="dots-marseille"></div>
+      <div class="dest-city-label">Marseille</div>
+    </div>
+
+    <!-- ── AIX-EN-PROVENCE ── -->
+    <div class="dest-block reveal">
+      <div class="dest-city-header">
+        <span class="dest-city-name">Aix-en-Provence</span>
+        <span class="dest-city-tag">Provence</span>
+      </div>
+      <div class="slideshow" id="ss-aix">
+        <div class="slide active">
+          <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=1400&q=85"
+               onerror="this.src='https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=1400&q=85'"
+               alt="Cours Mirabeau Aix-en-Provence"/>
+          <div class="slide-caption">Cours Mirabeau — the grand tree-lined boulevard of Aix</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1600493033990-1c5b0dc5a9b1?w=1400&q=85"
+               onerror="this.src='https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?w=1400&q=85'"
+               alt="Aix fountains"/>
+          <div class="slide-caption">The elegant moss-covered fountains of Aix — a city of a thousand waters</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?w=1400&q=85"
+               onerror="this.src='https://images.unsplash.com/photo-1543168256-418811576931?w=1400&q=85'"
+               alt="Sainte-Victoire mountain Cézanne"/>
+          <div class="slide-caption">Montagne Sainte-Victoire — Cézanne's eternal muse beyond the city</div>
+        </div>
+        <div class="slide-controls">
+          <button class="slide-btn" onclick="prevSlide('ss-aix')">&#8592;</button>
+          <button class="slide-btn" onclick="nextSlide('ss-aix')">&#8594;</button>
+        </div>
+      </div>
+      <div class="slide-dots" id="dots-aix"></div>
+      <div class="dest-city-label">Aix-en-Provence</div>
+    </div>
+
+    <!-- ── AVIGNON ── -->
+    <div class="dest-block reveal">
+      <div class="dest-city-header">
+        <span class="dest-city-name">Avignon</span>
+        <span class="dest-city-tag">Vaucluse</span>
+      </div>
+      <div class="slideshow" id="ss-avignon">
+        <div class="slide active">
+          <img src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=1400&q=85" alt="Palais des Papes Avignon"/>
+          <div class="slide-caption">Le Palais des Papes — a monumental UNESCO World Heritage fortress</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1558006060-d28ef35e5f52?w=1400&q=85"
+               onerror="this.src='https://images.unsplash.com/photo-1543168256-418811576931?w=1400&q=85'"
+               alt="Pont d'Avignon"/>
+          <div class="slide-caption">Le Pont Saint-Bénézet — the legendary bridge over the Rhône</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1549633030-898d9e665d22?w=1400&q=85"
+               onerror="this.src='https://images.unsplash.com/photo-1519751138087-5bf79df62d5b?w=1400&q=85'"
+               alt="Avignon medieval ramparts"/>
+          <div class="slide-caption">The remarkably preserved 14th-century ramparts encircling the city</div>
+        </div>
+        <div class="slide-controls">
+          <button class="slide-btn" onclick="prevSlide('ss-avignon')">&#8592;</button>
+          <button class="slide-btn" onclick="nextSlide('ss-avignon')">&#8594;</button>
+        </div>
+      </div>
+      <div class="slide-dots" id="dots-avignon"></div>
+      <div class="dest-city-label">Avignon</div>
+    </div>
+
+    <!-- ── GAP ── -->
+    <div class="dest-block reveal">
+      <div class="dest-city-header">
+        <span class="dest-city-name">Gap</span>
+        <span class="dest-city-tag">Hautes-Alpes</span>
+      </div>
+      <div class="slideshow" id="ss-gap">
+        <div class="slide active">
+          <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1400&q=85" alt="Gap alpine ski slopes"/>
+          <div class="slide-caption">World-class ski slopes in the heart of the Southern Alps</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1400&q=85" alt="Alpine peaks near Gap"/>
+          <div class="slide-caption">Spectacular Alpine panoramas surrounding the city of Gap</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=1400&q=85"
+               onerror="this.src='https://images.unsplash.com/photo-1543168256-418811576931?w=1400&q=85'"
+               alt="Gap summer alpine meadows"/>
+          <div class="slide-caption">Alpine meadows in summer — a hiking and cycling paradise</div>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1605493725784-34f90a60b9a4?w=1400&q=85"
+               onerror="this.src='https://images.unsplash.com/photo-1551524559-8af4e6624178?w=1400&q=85'"
+               alt="Gap mountain lake"/>
+          <div class="slide-caption">Serre-Ponçon — the vast turquoise lake at the gateway to Gap</div>
+        </div>
+        <div class="slide-controls">
+          <button class="slide-btn" onclick="prevSlide('ss-gap')">&#8592;</button>
+          <button class="slide-btn" onclick="nextSlide('ss-gap')">&#8594;</button>
+        </div>
+      </div>
+      <div class="slide-dots" id="dots-gap"></div>
+      <div class="dest-city-label">Gap</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-title">Contact Us</h2>
+        <div class="divider"></div>
+        <p>We would love to hear from you and discuss your group request in further detail. The more information you can give us about your group, their preferences, budget and expectations, the better we can tailor-make our offer according to their needs.</p>
+        <p style="margin-top:0.8rem">We look forward to being your travel partner in France and to welcoming your clients.</p>
+        <div class="contact-details">
+          <div class="contact-item"><span class="contact-item-icon">📧</span><span class="contact-item-text">contact@seaandski.fr</span></div>
+          <div class="contact-item"><span class="contact-item-icon">📞</span><span class="contact-item-text">+33 (0)4 XX XX XX XX</span></div>
+          <div class="contact-item"><span class="contact-item-icon">🌍</span><span class="contact-item-text">We respond in Swedish, Finnish, English & French</span></div>
+          <div class="contact-item"><span class="contact-item-icon">🕐</span><span class="contact-item-text">Available 24h during your clients' stay</span></div>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-row">
+          <div class="form-group"><label>First Name *</label><input type="text" id="fname" placeholder="Nathan"/></div>
+          <div class="form-group"><label>Last Name *</label><input type="text" id="lname" placeholder="Nicolaou"/></div>
+        </div>
+        <div class="form-group"><label>Email *</label><input type="email" id="email" placeholder="hello@seaandski.fr"/></div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" id="phone" placeholder="+33 6 00 00 00 00"/></div>
+        <div class="form-group"><label>Travel Comments</label><textarea id="message" rows="5" placeholder="Share details about your group, preferences, budget and expectations…"></textarea></div>
+        <button class="form-submit" onclick="handleSubmit()">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Sea <span>&</span> Ski</div>
+  <div class="footer-copy">© 2026 Sea and Ski — All rights reserved</div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#destinations">Destinations</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+const slideshows = {};
+
+function initSlideshow(id) {
+  const container = document.getElementById(id);
+  if (!container) return;
+  const slides = Array.from(container.querySelectorAll('.slide')).filter(s => !s.classList.contains('slide-controls'));
+  const dotKey = id.replace('ss-', '');
+  const dotsContainer = document.getElementById('dots-' + dotKey);
+  let current = 0;
+  let timer;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dotsContainer.children[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dotsContainer.children[current].classList.add('active');
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 4500);
+  }
+
+  slideshows[id] = {
+    next() { goTo(current + 1); },
+    prev() { goTo(current - 1); }
+  };
+
+  timer = setInterval(() => goTo(current + 1), 4500);
+}
+
+function nextSlide(id) { slideshows[id] && slideshows[id].next(); }
+function prevSlide(id) { slideshows[id] && slideshows[id].prev(); }
+
+['ss-nice','ss-menton','ss-cannes','ss-sainttropez','ss-marseille','ss-aix','ss-avignon','ss-gap'].forEach(initSlideshow);
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+function handleSubmit() {
+  const fname = document.getElementById('fname').value;
+  const email = document.getElementById('email').value;
+  if (!fname || !email) { alert('Please fill in your name and email.'); return; }
+  alert('Thank you ' + fname + '! We will be in touch shortly.');
+}
+</script>
+
+</body>
+</html>
